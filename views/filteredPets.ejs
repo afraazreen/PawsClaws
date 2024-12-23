@@ -1,0 +1,89 @@
+   <!-- Assignment 3 - SOEN 287 - Yuhong Yan - Summer II 2024
+Submitted By: Afra Azreen (Student ID: 40234047)
+Submitted On: 10/08/24
+ Question 4 - Filtered Pets
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtered Pet Records</title>
+    <link rel="stylesheet" href="styles/homestyle.css">
+</head>
+<body>
+
+<header>
+    <h1><img width="200" height="200" src="images/c.png" alt="header cat image"> &nbsp; Paws & Claws &nbsp;
+    <a href="/"><img class="logo" width="100" height="100" src="images/finallogo.png" alt = "logo"></a>
+    <img width="200" height="200" src="images/d.png" alt = "header dog image">
+    </h1>
+
+    <br>
+            <% if (isAuthenticated) { %>
+                <a href="/logout"><button class="donate-button">Logout</button></a>
+            <% } else { %>
+                <a href="/loginpage"><button class="donate-button">Login</button></a>
+            <% } %>
+            <br><br>
+
+    <!-- This allows me to add the date and time. -->
+    <div id = "datetime"></div>
+</header>
+
+<!-- Nav bar, only appears when smaller screens are used (refer to stylesheet)-->
+<nav>
+    <ul>
+        <li><a href="/" target="_self">Home</a></li>
+        <li><a href="/createaccount" target="_self">Create an Account</a></li>
+        <li><a href="/browseandfindpets" target="_self">Find a Cat/Dog</a></li>
+        <li><a href="/catCare" target="_self">Cat Care</a></li>
+        <li><a href="/dog" target="_self">Dog Care</a></li>
+        <li><a href="/givepetaway" target="_self">Have a Pet to Give Away?</a></li>
+        <li><a href="/contactus" target="_self">Contact Us</a></li>
+    </ul>
+</nav>
+
+
+<!-- Container div -->
+<div class="container">
+
+    <div class="sidebar">
+        <ul>
+             <li><a href="/" target="_self">Home</a></li>
+             <li><a href="/createaccount" target="_self">Create an Account</a></li>
+             <li><a href="/browseandfindpets" target="_self">Find a Cat/Dog</a></li>
+             <li><a href="/catCare" target="_self">Cat Care</a></li>
+             <li><a href="/dog" target="_self">Dog Care</a></li>
+             <li><a href="/givepetaway" target="_self">Have a Pet to Give Away?</a></li>
+             <li><a href="/contactus" target="_self">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <div style="text-align: justify;" class="content"></div>
+    <h2>Matching Pet Records:</h2>
+        <ul>
+            <% filteredPetRecords.forEach(record => { %>
+                <li><%= record %></li>
+            <% }) %>
+        </ul>
+    </div>    
+</div>
+
+</body>
+<footer>
+    <p><strong>Every life is precious - humans and animals alike. &nbsp;Help us make a difference today.</strong></p>
+    <p><a href="/contactus" class="donate-button">Donate</a></p>
+    <p style = "font-size: 12px;"><a href ="/privacy">Privacy Disclaimer</a></p>
+</footer>
+
+<!-- Script attached below. -->
+<script src = "js/date.js"></script>
+<script src = "js/formhandling.js"></script>
+</body>
+</html>
+
+
+
+

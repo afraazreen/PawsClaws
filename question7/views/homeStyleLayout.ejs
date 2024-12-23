@@ -1,0 +1,56 @@
+<!-- QUESTION 8 - ASSIGNMENT 1 - SOEN 287 - Summer (II) 2024
+ Written by Afra Azreen (Student ID: 40234047)
+ Professor: Yuhong Yan - Submitted: 14th July 2024
+
+ Home Page
+
+ ######################## REWRTIE THIS TO INCLUDE MOST RECENT CORRECT INFORMATION #######################################3
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+    <link rel="stylesheet" href="styles/homestyle.css">
+</head>
+<body>
+
+<header>
+    <h1><img width="200" height="200" src="images/c.png" alt="header cat image"> &nbsp; Paws & Claws &nbsp;
+    <a href="/"><img class="logo" width="100" height="100" src="images/finallogo.png" alt = "logo"></a>
+    <img width="200" height="200" src="images/d.png" alt = "header dog image">
+    </h1>
+
+    <!-- This allows me to add the date and time. -->
+    <div id = "datetime"></div>
+</header>
+
+<!-- Nav bar, only appears when smaller screens are used (refer to stylesheet)-->
+<nav>
+    <ul>
+        <li><a href="/" target="_self">Home</a></li>
+        <li><a href="browsepets.html" target="_self">Browse Available Pets</a></li>
+        <li><a href="findpets.html" target="_self">Find a Cat/Dog</a></li>
+        <li><a href="cat.html" target="_self">Cat Care</a></li>
+        <li><a href="dog.html" target="_self">Dog Care</a></li>
+        <li><a href="givepetaway.html" target="_self">Have a Pet to Give Away?</a></li>
+        <li><a href="contactus.html" target="_self">Contact Us</a></li>
+    </ul>
+</nav>
+
+
+<!-- Container div to hold the sidebar and content sections //// PLACE DYMANIC CONTENT HERE-->
+<%- include(content) %>
+
+<footer>
+    <p><strong>Every life is precious - humans and animals alike. &nbsp;Help us make a difference today.</strong></p>
+    <p><a href="contactus.html" class="donate-button">Donate</a></p>
+    <p style = "font-size: 12px;"><a href ="privacydisclaimer.html">Privacy Disclaimer</a></p>
+</footer>
+
+<!-- Script attached below. -->
+<script src = "js/date.js"></script>
+</body>
+</html>

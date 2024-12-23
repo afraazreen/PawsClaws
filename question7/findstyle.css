@@ -1,0 +1,231 @@
+/* Apply box-sizing: border-box to all elements to include padding and border in the element's total width and height */
+/* This is a responsiveness tool*/
+* {
+    box-sizing: border-box;
+}
+
+/* Style the body with arial and removing default margin */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+/* Styling the header*/
+header {
+    background-color: #f4257b;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+    position: relative;
+}
+
+/* Styling the logo with absolute positioning and specific size */
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 50px; 
+    height: auto;
+}
+
+/* Style the nav bar. It is hidden by default because it only appears on small screens. Scrolling is allowed to make sure it doesn't overflow. */
+nav {
+    background: #fc7fa7;
+    padding: 20px;
+    display: none; /* Hide by default */
+    overflow-x: auto; /* Allow horizontal scrolling */
+}
+/* Style the unordered list in the navigation bar with no list style, no padding, and no margin. Arrange list items in a row */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+/* Style the list items in the navigation bar with margin, text alignment, and prevent text wrapping */
+nav ul li {
+    margin: 10px;
+    text-align: center; /* Center align text for better spacing */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Style the links in the navigation bar with no text decoration, specific color, padding, border radius, and transition effects */
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 10px 15px; /* Add padding for better spacing */
+    border-radius: 5px; /* Add some border radius */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+
+/* Change the color and background color of the links in the navigation bar on hover or focus */
+nav ul li a:hover,
+nav ul li a:focus {
+    color: rgb(0, 0, 0);
+    background-color: #ffffff; /* Add background color on hover/focus */
+}
+
+/* Create a flex container */
+.container {
+    display: flex;
+}
+
+/* Style the sidebar with flex property, background color, and padding */
+.sidebar {
+    flex: 1;
+    background: #fc7fa7;
+    padding: 20px;
+}
+
+/* Style the unordered list in the sidebar with no list style, no padding, and no margin */
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Style the list items in the sidebar with margin */
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+/* Style the links in the sidebar with no text decoration, specific color, padding, border radius, and transition effects */
+.sidebar ul li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    display: block;
+    padding: 10px 15px; /* Add padding for better spacing */
+    border-radius: 5px; /* Add some border radius */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+
+/* Change the color and background color of the links in the sidebar on hover or focus */
+.sidebar ul li a:hover,
+.sidebar ul li a:focus {
+    color: rgb(0, 0, 0);
+    background-color: #ffffff; /* Add background color on hover/focus */
+}
+
+/* Style the main content area with flex property, background color, and padding */
+.content {
+    flex: 3;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+/* Style form elements with a flexible column layout and gap between items */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Style form labels with bold text */
+label {
+    font-weight: bold;
+}
+
+/* Style form inputs and select elements with padding, font size, border, and border radius */
+select,
+input[type="text"],
+input[type="submit"],
+input[type="reset"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style submit and reset buttons with background color, text color, no border, and pointer cursor */
+input[type="submit"],
+input[type="reset"] {
+    background-color: #f4257b;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Change the background color of submit and reset buttons on hover */
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #d0145b;
+}
+
+/* Style the footer with background color, padding, text alignment, and text color */
+footer {
+    background-color: #f4257b;
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+/* Media query for screens with a maximum width of 800px */
+@media (max-width: 800px) {
+    nav {
+        display: block; /* Show navigation bar on smaller screens */
+    }
+
+    .sidebar {
+        display: none; /* Hide sidebar on smaller screens */
+    }
+
+    .container {
+        flex-direction: column; /* Stack flex items vertically */
+    }
+}
+
+/* Media query for screens with a minimum width of 801px */
+@media (min-width: 801px) {
+    nav {
+        display: none; /* Hide navigation bar on larger screens */
+    }
+}
+
+/* Style the donate button with inline-block display, padding, font size, text color, background color, border, border radius, text alignment, text decoration, cursor, and transition effects */
+.donate-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: transparent;
+    border: 2px solid #fff;
+    border-radius: 25px; /* Makes the button oval-shaped */
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Change the background color and text color of the donate button on hover */
+.donate-button:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly opaque white background on hover */
+    color: #fff;
+}
+
+/* Style the checkbox group with flex layout, center alignment, gap between items, and margin top */
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* This is for the date and time. */ 
+#datetime {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 14px;
+    padding: 5px;
+}
+
+/* This is to style the error in case the field is left blank. */
+.error {
+    color: red;
+    margin-top: 10px;
+}

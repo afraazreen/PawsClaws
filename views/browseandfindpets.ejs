@@ -1,0 +1,128 @@
+ <!-- Assignment 3 - SOEN 287 - Yuhong Yan - Summer II 2024
+Submitted By: Afra Azreen (Student ID: 40234047)
+Submitted On: 10/08/24
+ Question 4 - Browse and Find Pets
+-->
+
+<div class="container">
+
+    <!-- Sidebar section containing the navigation menu -->
+   <div class="sidebar">
+       <ul>
+            <li><a href="/" target="_self">Home</a></li>
+            <li><a href="/createaccount" target="_self">Create an Account</a></li>
+            <li><a href="/browseandfindpets" target="_self">Find a Cat/Dog</a></li>
+            <li><a href="/catCare" target="_self">Cat Care</a></li>
+            <li><a href="/dog" target="_self">Dog Care</a></li>
+            <li><a href="/givepetaway" target="_self">Have a Pet to Give Away?</a></li>
+            <li><a href="/contactus" target="_self">Contact Us</a></li>
+       </ul>
+   </div>
+
+   <div class="content">
+       <div class="pink-block">
+           <img src="images/sadu.jpg" alt="Pet Image">
+           <div class="text">
+               <h2>Sadu</h2>
+               <p style="text-align: justify;">Sadu is a Persian kitten, almost one month old! She is quiet, keeps to herself, and very observant. Easy to train, self-sufficient, and incredibly neat. She is ready to bring you the order you need.</p>
+               <h3>Fun Fact: She loves tuna and belly rubs! Any time, any place - Sadu wants tuna, and she wants it now!</h3>
+               <h2 class="donate-button">I'm Interested</h2>
+           </div>
+       </div>
+
+       <div class="pink-block">
+           <img src="images/caps.jpg" alt="Pet Image">
+           <div class="text">
+               <h2>Caps</h2>
+               <p style="text-align: justify;">Caps is a pure-bred Pomeranian! Almost 7 months old, she's playful, compassionate, and incredibly loving. Already trained, she is ready to be your life-long bestie!</p>
+               <h3>Fun Fact: Caps loves playing with toys, especially ones that squeak! She can spend hours tossing them around and chasing after them!</h3>
+               <h2 class="donate-button">I'm Interested</h2>
+           </div>
+       </div>
+
+       <div class="pink-block">
+           <img src="images/rizzi.jpg" alt="Pet Image">
+           <div class="text">
+               <h2>Rizzi</h2>
+               <p style="text-align: justify;">Rizzi is a 3-week-old mixed breed kitten! He is shy, enjoys calm environments, and can't go anywhere without his emotional support blankie. He is ready to care for you as you care for him!</p>
+               <h3>Fun Fact: Rizzi is a big fan of snuggling. Whether it's on the couch or in bed, he'll happily curl up next to you for some quality cuddle time.</h3>
+               <h2 class="donate-button">I'm Interested</h2>
+           </div>
+       </div>
+
+       <div class="pink-block">
+           <img src="images/mork.jpg" alt="Pet Image">
+           <div class="text">
+               <h2>Mork</h2>
+               <p style="text-align: justify;">Mork is a 5 month old golden retriever! He is energetic, loves making friends, and always finds himself in some kind of trouble. Loyal and kind, he is ready to support you through thick and thin!</p>
+               <h3>Fun Fact: Mork loves spicy mayo! Put it in his kibble, or put it on his lick-mat, spicy mayo is the secret to keeping this pup happy and healthy. </h3>
+               <h2 class="donate-button">I'm Interested</h2>
+           </div>
+       </div>
+       
+       <!-- Note that the required aspect of the form element allows the browser to automatically display a validation message without the use of JS. -->
+       <div style="text-align: justify;" class="content">
+        <h1>Looking for your next best friend?</h1>
+        <h2>Paws & Claws is here to help. Fill out the form below so we can match you with your dream canine or feline companion!</h2>
+        <form id="findpetform" method="POST" action="/submitFind">
+            <label for="animaltype">Cat or Dog</label>
+            <select id="animaltype" name="animaltype" required>
+                <option value="">Select</option>
+                <option value="cat">Cat</option>
+                <option value="dog">Dog</option>
+            </select>
+            <br>
+            <label for="breed">Breed</label>
+            <select id="breed" name="breed" required>
+                <option value="">Select</option>
+                <option value="any">Doesn't Matter</option>
+                <option value="labrador">Labrador</option>
+                <option value="siamese">Siamese</option>
+                <option value="beagle">Beagle</option>
+                <option value="poodle">Poodle</option>
+                <option value="Chihuahua">Chihuahua</option>
+                <option value="Dachshund">Dachshund</option>
+                <option value="Pomeranian">Pomeranian</option>
+                <option value="Golden Retriever">Golden Retriever</option>
+                <option value="Husky">Husky</option>
+                <option value="Rottweiler">Rottweiler</option>
+            </select>
+            <br>
+            <label for="age">Preferred Age</label>
+            <select id="age" name="age" required>
+                <option value="">Select</option>
+                <option value="any">Doesn't Matter</option>
+                <option value="puppy-kitten">Puppy/Kitten</option>
+                <option value="adult">Adult</option>
+                <option value="senior">Senior</option>
+            </select>
+            <br>
+            <label for="gender">Preferred Gender</label>
+            <select id="gender" name="gender" required>
+                <option value="">Select</option>
+                <option value="any">Doesn't Matter</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <br>
+            <label>Needs to Get Along With</label>
+            <div class="checkbox-group">
+                <input type="checkbox" id="otherdogs" name="otherdogs">
+                <label for="otherdogs">Other Dogs</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="cats" name="othercats">
+                <label for="othercats">Other Cats</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="otherchildren" name="otherchildren">
+                <label for="otherchildren">Small Children</label>
+            </div>
+            <br>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Clear">
+            <div id="error-message" class="error"></div>
+        </form>
+    </div>
+   </div>
+</div>

@@ -1,0 +1,167 @@
+ <!-- Assignment 3 - SOEN 287 - Yuhong Yan - Summer II 2024
+Submitted By: Afra Azreen (Student ID: 40234047)
+Submitted On: 10/08/24
+ Question 4 - Browse Style Layout
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paws & Claws - Browse Pets</title>
+    <!-- Using same stylesheet as home, because no changes were made to the styling of this page. -->
+    <link rel="stylesheet" href="styles/homestyle.css">
+    <style>
+        .pink-block {
+            display: flex;
+            background-color: #fc4893;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            align-items: center;
+            margin-bottom: 20px; /* To add some space below the block */
+        }
+        .pink-block img {
+            max-width: 200px;
+            max-height: 200px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        .pink-block .text {
+            flex: 1;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+        
+        /* Style the body with arial and removing default margin */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+        }
+        
+        /* Style form elements with a flexible column layout and gap between items */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        /* Style form labels with bold text */
+        label {
+            font-weight: bold;
+        }
+        
+        /* Style form inputs and select elements with padding, font size, border, and border radius */
+        select,
+        input[type="text"],
+        input[type="submit"],
+        input[type="reset"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        /* Style submit and reset buttons with background color, text color, no border, and pointer cursor */
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: #f4257b;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        
+        /* Change the background color of submit and reset buttons on hover */
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: #d0145b;
+        }
+        
+        /* Media query for screens with a maximum width of 800px */
+        @media (max-width: 800px) {
+            nav {
+                display: block; /* Show navigation bar on smaller screens */
+            }
+        
+            .sidebar {
+                display: none; /* Hide sidebar on smaller screens */
+            }
+        
+            .container {
+                flex-direction: column; /* Stack flex items vertically */
+            }
+        }
+        
+        /* Media query for screens with a minimum width of 801px */
+        @media (min-width: 801px) {
+            nav {
+                display: none; /* Hide navigation bar on larger screens */
+            }
+        }
+        
+      
+        
+        /* Style the checkbox group with flex layout, center alignment, gap between items, and margin top */
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+         
+        /* This is to style the error in case the field is left blank. */
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1><img width="200" height="200" src="images/c.png" alt="cat header"> &nbsp; Paws & Claws &nbsp;
+    <a href="/"><img class="logo" width="100" height="100" src="images/finallogo.png" alt="logo"></a>
+    <img width="200" height="200" src="images/d.png" alt="dog header">
+    </h1>
+        
+    <br>
+        <% if (isAuthenticated) { %>
+            <a href="/logout"><button class="donate-button">Logout</button></a>
+        <% } else { %>
+            <a href="/loginpage"><button class="donate-button">Login</button></a>
+        <% } %>
+    <br><br>
+
+     <!-- This allows me to add the date and time. -->
+     <div id="datetime"></div>
+</header>
+
+<!-- Nav bar, only appears when smaller screens are used (refer to stylesheet)-->
+<nav>
+    <ul>
+        <li><a href="/" target="_self">Home</a></li>
+        <li><a href="/createaccount" target="_self">Create an Account</a></li>
+        <li><a href="/browseandfindpets" target="_self">Find a Cat/Dog</a></li>
+        <li><a href="/catCare" target="_self">Cat Care</a></li>
+        <li><a href="/dog" target="_self">Dog Care</a></li>
+        <li><a href="/givepetaway" target="_self">Have a Pet to Give Away?</a></li>
+        <li><a href="/contactus" target="_self">Contact Us</a></li>
+    </ul>
+</nav>
+
+<!-- Container div to hold the sidebar and content sections -->
+<%- include(content) %>
+
+<footer>
+    <p><strong>Every life is precious - humans and animals alike. &nbsp;Help us make a difference today.</strong></p>
+    <p><a href="/contactus" class="donate-button">Donate</a></p>
+    <p style="font-size: 12px;"><a href="/privacy">Privacy Disclaimer</a></p>
+</footer>
+
+<script src="js/date.js"></script>
+<script src="js/formhandling.js"></script>
+</body>
+</html>
